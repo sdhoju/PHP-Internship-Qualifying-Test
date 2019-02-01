@@ -5,16 +5,18 @@ class Customer {
     protected $customerID;  
     protected $name;  
     protected $emailAddress;  
-    protected  $age = null;  
-    protected  $gender;
+    protected $age = null;  
+    protected $gender;
 
-    protected function __construct($customerID,$name,$emailAddress,$age=null,$gender)
+    public function __construct($params=array())
     {
-        $this->customerID = $customerID;
-        $this->name = $name;
-        $this->emailAddress = $emailAddress;
-        $this->age = $age;
-        $this->gender = $gender;
+        if(!empty($params)){
+            $this->customerID = $params[0];
+            $this->name = $params[1];
+            $this->emailAddress = $params[2];
+            $this->age = $params[3];
+            $this->gender = $params[4];
+        }
     }
     
 
