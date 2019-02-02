@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/RecordOutput.php';
 
+/**
+ * FormatFactory class 
+ *
+ * Is used to create the format and output the records.
+ */
 class FormatFactory
 {
     /**
@@ -25,8 +30,22 @@ class FormatFactory
     }
 }
 
+
+/**
+ * CSV class is the implementation of FormatInterface 
+ *
+ * is used to  write the products to csv file
+ */
 class CSV implements FormatInterface{
+    /** @var file $csvFile is the file to be written*/
     protected $csvFile;
+
+
+    /**
+    * Creates the product.csv file and add header to it
+    *  
+    *@return string 
+    */
     public function start(){
         // header("Content-type: text/csv");
         echo "===============================CSV===============================";
@@ -36,21 +55,45 @@ class CSV implements FormatInterface{
         return "<br>File product.csv created<br><br>";
     }
 
+
+    /**
+    * Writes Product to csv file
+    * 
+    * @param $record is the Product object  
+    * @return string 
+    */
     public function formatRecord($record){        
         fputcsv($this->csvFile, array_values((array) $record));
         return $record->getName()." added.<br>";
     }
 
+
+    /**
+    * Closes the csv file 
+    *  
+    *@return string 
+    */
     public function finish(){
         fclose($this->csvFile);
         return "<br>File successfully populated. Find product.csv at __DIR__ /output_files/ <br><br> ";
     }
 }
 
+
+/**
+ * XML class is the implementation of FormatInterface 
+ *
+ * is used to  write the customers to xml file
+ */
 class XML implements FormatInterface{
     protected $xml;
     protected $root;
 
+    /**
+    * Creates the xml from DomDocuments and append customers as root to xml.
+    *  
+    *@return string 
+    */
     public function start(){
         echo "===============================XML===============================";
 
@@ -60,6 +103,13 @@ class XML implements FormatInterface{
         return "<br>XML created from DomDocument.<br><br>";
     }
 
+
+    /**
+    * Add customer to parent customers and append elements id,name,email,age,gender to customer
+    * 
+    * @param $record is the Customer object  
+    * @return string 
+    */
     public function formatRecord($record){
         $customer=$record;
         $xmlCustomer=$this->xml->createElement("customer");
@@ -83,6 +133,11 @@ class XML implements FormatInterface{
         return $customer->getName()." added. <br>";
     }
 
+    /**
+    * Format the xml and out the xml object to xmlfile  
+    *  
+    *@return string 
+    */
     public function finish(){
         $this->xml->preserveWhiteSpace = false;
         $this->xml->formatOutput = true;
@@ -93,10 +148,21 @@ class XML implements FormatInterface{
 }
 
 
+/**
+ * JSON class is the implementation of FormatInterface 
+ *
+ * is used to  write the orders to json file
+ */
 class JSON implements FormatInterface{
     protected $jsonFile;
     protected $jsonArray;
 
+
+    /**
+    * Create an empty json file or load the json file
+    *  
+    *@return string 
+    */
     public function start(){
         echo "===============================JSON===============================";
         $this->jsonArray = array("orders"=> array( )); 
@@ -104,11 +170,23 @@ class JSON implements FormatInterface{
         return "<br>JSON file Created.<br><br>";
     }
 
+
+    /**
+    * Add order to json array of orders
+    * 
+    * @param $record is the Order object  
+    * @return string 
+    */
     public function formatRecord($record){
         $this->jsonArray["orders"][]=$record;
         return $record->getID()." added.<br>";
     }
 
+    /**
+    * Write the jsonArray to the json file and 
+    *  
+    *@return string 
+    */
     public function finish(){
         fwrite($this->jsonFile, json_encode($this->jsonArray,JSON_PRETTY_PRINT));
         return "<br>File successfully populated. Find orders.json at __DIR__ /output_files/ <br><br> ";

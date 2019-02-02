@@ -1,12 +1,40 @@
 <?php
 
-
 class Product {
 
+    /**
+     * The id of Product
+     *
+     * @var string
+     */
     protected $sku ;
+
+    /**
+     * The name of the product
+     *
+     * @var string
+     */
     protected $name;
+
+    /**
+     * The brand of the product
+     *
+     * @var string
+     */
     protected $brand=null;
+
+    /**
+     * The price of the product
+     *
+     * @var float
+     */
     protected $price;
+
+    /**
+     * The currency of the price
+     *
+     * @var string
+     */
     protected $currency;
 
     public function __construct($params=array())
@@ -30,17 +58,6 @@ class Product {
         return $this->sku;
     }
 
-    /**
-     * Set the value of sku
-     *
-     * @return  self
-     */ 
-    public function setSku($sku)
-    {
-        $this->sku = $sku;
-
-        return $this;
-    }
 
     /**
      * Get the value of name
@@ -50,17 +67,6 @@ class Product {
         return $this->name;
     }
 
-    /**
-     * Set the value of name
-     *
-     * @return  self
-     */ 
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
 
 
     /**
@@ -71,18 +77,7 @@ class Product {
         return $this->brand;
     }
 
-    /**
-     * Set the value of brand
-     *
-     * @return  self
-     */ 
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-
-        return $this;
-    }
-
+  
     /**
      * Get the value of price
      */ 
@@ -91,17 +86,7 @@ class Product {
         return $this->price;
     }
 
-    /**
-     * Set the value of price
-     *
-     * @return  self
-     */ 
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
+   
     /**
      * Get the value of currency
      */ 
@@ -110,27 +95,16 @@ class Product {
         return $this->currency;
     }
 
-    /**
-     * Set the value of currency
-     *
-     * @return  self
-     */ 
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
-        return $this;
-    }
+    
     public function __toString()
     {
-        $productString="SKU: ".$this->getSku()."\n".
-                        "name: ".$this->getName()."\n".
-                        "brand: ".$this->getBrand()."\n".
-                        "price: ".$this->getPrice()."\n".
-                        "currency: ".$this->getCurrency()."\n";
+        $productString="".$this->getSku().
+                        ", ".$this->getName().
+                        ", ".$this->getBrand().
+                        ", ".$this->getPrice().
+                        ", ".$this->getCurrency();
         return $productString;
     }
-
-
 
     
 }

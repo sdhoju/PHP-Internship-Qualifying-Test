@@ -1,8 +1,25 @@
 <?php
 
 class Order{
+    /**
+     * The order idowner.
+     *
+     * @var string
+     */
     public $id;
+
+    /**
+     * The head of the order
+     *
+     * @var head
+     */
     public $head;
+
+    /**
+     * The array of line.
+     *
+     * @var array
+     */
     public $lines=array();
 
     public function __construct($id,$head, $lines=array())
@@ -22,18 +39,48 @@ class Order{
         $this->lines[] = $line;
     }
 
+    /**
+     * Get the order id
+     *
+     * @return string id
+     */ 
     public function getID()
     {
         return $this->id;
     }
-    
 }
 
+
+
 class head{
+    /**
+     * The subtotal of order.
+     *
+     * @var float 
+     */
     public $sub_total;
+
+    /**
+     * The order tax.
+     *
+     * @var float
+     */
     public $tax;
+
+    /**
+     * The order total.
+     *
+     * @var float 
+     */
     public $total;
+
+    /**
+     * The id of customer that placed the order
+     *
+     * @var string
+     */
     public $customer;
+
 
     public function __construct($params)
     {
@@ -46,10 +93,40 @@ class head{
 }
 
 class line{
+
+    /**
+     * The id of customer that placed the order
+     *
+     * @var integer
+     */
     public $position;
+
+    /**
+     * The product name
+     *
+     * @var string
+     */
     public $name;
+
+    /**
+     * The price of product
+     *
+     * @var string
+     */
     public $price;
+
+    /**
+     * The quantity of product
+     *
+     * @var string
+     */
     public $quantity;
+
+    /**
+     * The total of the row 
+     *
+     * @var string
+     */
     public $row_total;
 
     public function __construct($params)
