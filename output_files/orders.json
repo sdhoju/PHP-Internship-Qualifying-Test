@@ -2,7 +2,6 @@
     "orders": [
         {
             "id": "ORD0010",
-            "numberOfLines": "2",
             "head": {
                 "sub_total": "289.99",
                 "tax": "21.11",
@@ -12,23 +11,22 @@
             "lines": [
                 {
                     "position": 1,
-                    "name": "1",
-                    "price": "Zoy Hoodie",
-                    "quantity": "100.00",
-                    "row_total": "2"
+                    "name": "Zoy Hoodie",
+                    "price": "100.00",
+                    "quantity": 2,
+                    "row_total": "200.00"
                 },
                 {
                     "position": 2,
-                    "name": "2",
-                    "price": "Zoy Jacket",
-                    "quantity": "89.99",
-                    "row_total": "1"
+                    "name": "Zoy Jacket",
+                    "price": "89.99",
+                    "quantity": 1,
+                    "row_total": "89.99"
                 }
             ]
         },
         {
             "id": "ORD0011",
-            "numberOfLines": "1",
             "head": {
                 "sub_total": "22.35",
                 "tax": "1.90",
@@ -38,10 +36,10 @@
             "lines": [
                 {
                     "position": 1,
-                    "name": "1",
-                    "price": "Zoy Notebook",
-                    "quantity": "22.35",
-                    "row_total": "1"
+                    "name": "Zoy Notebook",
+                    "price": "22.35",
+                    "quantity": 1,
+                    "row_total": "22.35"
                 }
             ]
         }

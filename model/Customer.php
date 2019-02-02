@@ -11,11 +11,11 @@ class Customer {
     public function __construct($params=array())
     {
         if(!empty($params)){
-            $this->customerID = $params[0];
-            $this->name = $params[1];
-            $this->emailAddress = $params[2];
-            $this->age = $params[3];
-            $this->gender = $params[4];
+            $this->customerID = (string) $params[0];
+            $this->name =(string) $params[1];
+            $this->emailAddress =(string) $params[2];
+            $this->age =(integer) $params[3];
+            $this->gender =(integer) $params[4];
         }
     }
     

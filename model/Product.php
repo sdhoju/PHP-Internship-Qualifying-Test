@@ -11,12 +11,13 @@ class Product {
 
     public function __construct($params=array())
     {
+        //'"' Added to show Quote in excel file
         if(!empty($params)){
-            $this->sku = $params[0];
-            $this->name = $params[1];
-            $this->brand = $params[2];
+            $this->sku =  '"'.$params[0].'"'; 
+            $this->name ='"'.$params[1].'"';
+            $this->brand = $params[2]==''?'':'"'.$params[2].'"';
             $this->price = $params[3];
-            $this->currency = $params[4]==''?"USD":$params[4];
+            $this->currency =  $params[4]==''?'"USD"':'"'.$params[4].'"';
         }
        
     }

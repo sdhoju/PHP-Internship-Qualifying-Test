@@ -2,27 +2,16 @@
 
 class Order{
     public $id;
-    public $numberOfLines;
     public $head;
     public $lines=array();
 
-    public function __construct($id,$numberOfLines,$head, $lines=array())
+    public function __construct($id,$head, $lines=array())
     {
         $this->id = $id;
-        $this->numberOfLines = $numberOfLines;
         $this->head= $head;
         $this->lines = ($lines==null)?array():$lines;
     }
     
-
-    /**
-     * Get the value of lines
-     */ 
-    public function getLines()
-    {
-        return $this->lines;
-    }
-
     /**
      * Set the value of lines
      *
@@ -44,11 +33,12 @@ class head{
 
     public function __construct($params)
     {
-        $this->sub_total = $params[0];
-        $this->tax = $params[1];
-        $this->total= $params[2];
+        $this->sub_total =  number_format((float)$params[0], 2); 
+        $this->tax =  number_format((float)$params[1], 2); 
+        $this->total= number_format((float)$params[2], 2); 
         $this->customer = $params[3];
     }
+    
 }
 
 class line{
@@ -58,13 +48,13 @@ class line{
     public $quantity;
     public $row_total;
 
-    public function __construct($position,$params)
+    public function __construct($params)
     {
-        $this->position = $position;
-        $this->name = $params[0];
-        $this->price= $params[1];
-        $this->quantity = $params[2];
-        $this->row_total = $params[3];
+        $this->position = (integer)$params[0];
+        $this->name = $params[1];
+        $this->price= number_format((float)$params[2], 2); 
+        $this->quantity =(integer) $params[3];
+        $this->row_total =  number_format((float)$params[2]*(float)$params[3], 2) ;
 
     }
 }

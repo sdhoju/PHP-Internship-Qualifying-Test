@@ -26,43 +26,27 @@ class FormatFactory
 }
 
 class CSV implements FormatInterface{
-    protected $file;
+    protected $csvFile;
     public function start(){
-
         // header("Content-type: text/csv");
+        echo "Starting adding products to csv file <br>";
         $header = array("SKU", "name","brand", "price", "currency");
-        $field = array("SKU", "name","brand", "price", "currency");
-        $this->file = fopen('output_files/product.csv', 'w');
-        fputcsv($this->file, $header);
+        $this->csvFile = fopen('output_files/product.csv', 'w');
+        fputcsv($this->csvFile, $header);
         return "File product.csv created<br>";
     }
 
-    public function formatRecord($record){
-        $product = new Product($record);
-        
-        fputcsv($this->file, array_values((array) $product));
-        return $product." added to file <br>";
-
+    public function formatRecord($record){        
+        fputcsv($this->csvFile, array_values((array) $record));
+        return $record." added to file <br>";
     }
 
     public function finish(){
-        fclose($this->file);
-        return "CSV complete <br> ";
+        fclose($this->csvFile);
+        return "file successfully populated. Find it at __DIR__ /output_files/ <br><br> ";
     }
 }
 
-
-
-// $xml = new SimpleXMLElement('<xml/>');
-
-// for ($i = 1; $i <= 8; ++$i) {
-//     $track = $xml->addChild('track');
-//     $track->addChild('path', "song$i.mp3");
-//     $track->addChild('title', "Track $i - Track Title");
-// }
-
-// Header('Content-type: text/xml');
-// print($xml->asXML());
 class XML implements FormatInterface{
     protected $file;
     protected $myXML;
@@ -78,13 +62,12 @@ class XML implements FormatInterface{
     }
 
     public function formatRecord($record){
-
+        
     }
 
     public function finish(){
         Header('Content-type: text/xml');
         echo $this->myXML->asXML();
-        // fclose($this->file);
     }
 }
 
@@ -92,13 +75,24 @@ class XML implements FormatInterface{
 
 
 class JSON implements FormatInterface{
-    protected $file;
+    protected $jsonFile;
+    protected $jsonArray;
+
     public function start(){
+        $this->jsonArray = array("orders"=>
+                        array(
+                        )); 
+        $this->jsonFile = fopen('output_files/orders.json', 'w');
+        return "JSON file Created.<br>";
     }
 
     public function formatRecord($record){
+        $this->jsonArray["orders"][]=(array)$record;
     }
 
     public function finish(){
+        fwrite($this->jsonFile, json_encode($this->jsonArray,JSON_PRETTY_PRINT));
+        return "Successfully add all the Orders in orders.json.<br><br>";
+
     }
 }
