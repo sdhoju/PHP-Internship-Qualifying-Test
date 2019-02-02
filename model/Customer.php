@@ -4,7 +4,7 @@
 class Customer {
 
     /**
-     * The id of customer 
+     * The id of customer that placed the order
      *
      * @var string
      */
@@ -48,5 +48,52 @@ class Customer {
             $this->gender =(integer) $params[4];
         }
     }
+    
+
+    /**
+     * Get the value of customerID
+     */ 
+    public function getCustomerID()
+    {
+        return $this->customerID;
+    }
+
+    /**
+     * Get the value of name
+     */ 
+    public function getName()
+    {
+        return $this->name;
+    }
+
+   
+
+    /**
+     * Get the value of emailAddress
+     */ 
+    public function getEmailAddress()
+    {
+        return $this->emailAddress;
+    }
+
+   
+    /**
+     * Get the value of age
+     */ 
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+   
+    /**
+     * Get the value of gender
+     */ 
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    
 
 }

@@ -18,7 +18,7 @@ The goal of this project is to develop a program that parse the txt file contain
 PHP, can be installed with XAMPP https://www.apachefriends.org/index.html.  It is a free PHP development environment.
 
 ### Installation
-Once the required environment is set, download the unzip the files and set it up in a folder. 
+Once the required environment is set, unzip the files and set it up in a folder. 
 If you are using XAMPP to run it set the folder inside htdocs folder in XAMPP installation folder. Run the Apache server from XAMPP control panel.
 In the browser, go to http://localhost/developer-intern-test/. It will run the index.php file. Index.php (egg???) is the runner file for this program.
 
