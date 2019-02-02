@@ -15,7 +15,7 @@ class RecordOutput{
     }
     public function setRecords(array $records)
     {
-        $this->records = $records;
+        $this->records = $records; 
     }
     public function setFormat(FormatInterface $format)
     {

@@ -22,6 +22,10 @@ class Order{
         $this->lines[] = $line;
     }
 
+    public function getID()
+    {
+        return $this->id;
+    }
     
 }
 

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<customers>
+  <customer>
+    <id>CST9104</id>
+    <name>John Jones</name>
+    <email>jjones@email.com</email>
+    <age>25</age>
+    <gender>1</gender>
+  </customer>
+  <customer>
+    <id>CST2019</id>
+    <name>Peter Parker</name>
+    <email>spidey@email.com</email>
+    <age>19</age>
+    <gender>1</gender>
+  </customer>
+  <customer>
+    <id>CST9140</id>
+    <name>Molly Hatchet</name>
+    <email>classicrock@email.com</email>
+    <age>0</age>
+    <gender>2</gender>
+  </customer>
+  <customer>
+    <id>DUCK2019</id>
+    <name>Duck Lady</name>
+    <email>duckinbaskek@email.com</email>
+    <age>26</age>
+    <gender>1</gender>
+  </customer>
+</customers>

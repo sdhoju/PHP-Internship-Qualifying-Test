@@ -9,3 +9,4 @@
 "order","ORD0011",1,22.35,1.90,24.25,"CST2019"
 "order-line",1,"Zoy Notebook",22.35,1
 "product","GC2","Gas Can","Gas King",19.99,"EUR"
+"customer","DUCK2019","Duck Lady","duckinbaskek@email.com",26,1
