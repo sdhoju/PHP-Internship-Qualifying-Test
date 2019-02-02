@@ -25,6 +25,8 @@ In the browser, go to http://localhost/developer-intern-test/. It will run the i
 ### Output
 The output files are generated inside folder output_files which is in same directory as the index.php file 
 
+![eastereggoutput](https://user-images.githubusercontent.com/25574185/52168182-94143380-26ec-11e9-86b3-53a6dfd47069.JPG)
+
 ## Authors
 
 * **Sameer Dhoju** - *Submission* - [sdhoju](https://github.com/sdhoju)
