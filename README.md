@@ -1,4 +1,4 @@
-# Razoyo Developer Internship Qualifying
+# Razoyo Developer Internship Qualifying Test
 
 The goal of this project is to develop a program that parse the txt file containing records of customers, products, and orders then output them in corresponding format.
 *  customers.xml
@@ -15,17 +15,22 @@ The goal of this project is to develop a program that parse the txt file contain
 ### Requirements
    -	PHP 5.3+ 
 #### PHP 
-PHP, can be installed with XAMPP https://www.apachefriends.org/index.html.  It is a free PHP development environment.
+Check if the Php is installed in the device. Run following command in the command line / terminal.
+```
+php -v
+```
+If PHP is not install in the device please follow [PHP Installation](http://php.net/manual/en/install.php).  
 
-### Installation
-Once the required environment is set, unzip the files and set it up in a folder. 
-If you are using XAMPP to run it set the folder inside htdocs folder in XAMPP installation folder. Run the Apache server from XAMPP control panel.
-In the browser, go to http://localhost/developer-intern-test/. It will run the index.php file. Index.php (egg???) is the runner file for this program.
+### Running the project
+Unzip the file in a folder. In Terminal or command line go to the folder where the project is unzipped. To run the program run the following command.      
+```
+php index.php
+```
+If there is problem with running PHP make sure that the device has PHP by following previous step. 
+
 
 ### Output
 The output files are generated inside folder output_files which is in same directory as the index.php file 
-
-![eastereggoutput](https://user-images.githubusercontent.com/25574185/52168182-94143380-26ec-11e9-86b3-53a6dfd47069.JPG)
 
 ## Authors
 
